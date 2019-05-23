@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Image/Flash Show&Download - uuware.com</title>
+<script>
+function init() {
+  if(!localStorage.h) {
+    localStorage.h = 100;
+  }
+  if(!localStorage.t) {
+    localStorage.t = 1;
+  }
+  document.getElementById('h').value = localStorage.h;
+  document.getElementById('t1').checked = (localStorage.t!=2);
+  document.getElementById('t2').checked = !(localStorage.t!=2);
+}
+function save() {
+  localStorage.h = document.getElementById('h').value;
+  if(!(localStorage.h > 100)) {
+    localStorage.h = 100;
+    document.getElementById('h').value = 100;
+  }
+  localStorage.t = (document.getElementById('t1').checked?1:2);
+}
+</script>
+</head>
+<body onload="init()">
+<h2 class="caption">Image/Flash Show&Download - uuware.com</h2>
+<br>
+<table><tr><td colspan=2><b>If image's height is more than:</b><input type="text" id="h" value="" size="4" maxlength="4" />,</td></tr>
+<tr><td rowspan=2><b>Then</b></td><td><label><input type="radio" name="t" id="t1" checked="checked" />Reduce the size of the image.</label></td></tr>
+<tr><td><label><input type="radio" name="t" id="t2" />Show scroll bar with the orignal size.</label></td></tr></table>
+<br>
+<button onClick="save()">Save</button>
+<br>
+<br>
+<br>
+</body>
+</html>

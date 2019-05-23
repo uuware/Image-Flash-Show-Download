@@ -1,0 +1,22 @@
+﻿{
+  "name": "Image/Flash Show&Download",
+  "description": "Show/Download all images(also background images from css file) for current page, include all frames. Also others like Flash.",
+  "version": "2.0",
+  "manifest_version": 2,
+  "homepage_url": "http://uuware.com/",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "options_page": "options.html",
+  "icons": {
+    "32": "icon-small.png",
+    "48": "icon_48.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon-small.png"
+  },
+  "permissions": [
+  "tabs", "\u003Call_urls\u003E", "http://*/*", "https://*/*"
+  ]
+}
